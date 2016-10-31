@@ -1,6 +1,6 @@
 %h1 My Todos
 
-=form_for Todo.new do |f|
+=form_for Todo.new, remote: true do |f|
   .form-group
     =f.text_field :description, placeholder: "what needs doing?"
     =f.text_field :priority, placeholder: "priority level"
