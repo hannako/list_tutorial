@@ -1,5 +1,6 @@
-%li=todo.description
-%strong priority:
-=todo.priority
-%br
-=link_to "done",todo_path(todo),method: 'delete'
+%li{:id => "#{todo.id}"}
+  =todo.description
+  %strong priority:
+  =todo.priority
+  %br
+  =link_to "done",todo_path(todo),method: 'delete', remote: true

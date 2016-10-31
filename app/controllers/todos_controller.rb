@@ -16,9 +16,13 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    todo =Todo.find(params[:id])
-    todo.destroy
-    redirect_to root_path
+    @todo =Todo.find(params[:id])
+    @todo.destroy
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { }
+    end
   end
 
   private
