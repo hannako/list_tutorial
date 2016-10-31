@@ -8,7 +8,10 @@ class TodosController < ApplicationController
 
   def create
     Todo.create(todo_params)
-    redirect_to root_path
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js {  }
   end
 
   def destroy
