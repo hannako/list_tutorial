@@ -1,3 +1,4 @@
+require 'pry'
 class TodosController < ApplicationController
 
   def index
@@ -6,7 +7,6 @@ class TodosController < ApplicationController
   end
 
   def create
-    require pry;binding.pry
     Todo.create(todo_params)
     redirect_to root_path
   end
