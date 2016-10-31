@@ -7,9 +7,4 @@
     =f.submit
 
 %ul
--@todos.each do |todo|
-  %li=todo.description
-  %strong priority:
-  =todo.priority
-  %br
-  =link_to "done",todo_path(todo),method: 'delete'
+  = render @todos
