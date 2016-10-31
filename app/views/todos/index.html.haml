@@ -1,0 +1,15 @@
+%h1 My Todos
+
+=form_for Todo.new do |f|
+  .form-group
+    =f.text_field :description, placeholder: "what needs doing?"
+    =f.text_field :priority, placeholder: "priority level"
+    =f.submit
+
+%ul
+-@todos.each do |todo|
+  %li=todo.description
+  %strong priority:
+  =todo.priority
+  %br
+  =link_to "done",todo_path(todo),method: 'delete'
